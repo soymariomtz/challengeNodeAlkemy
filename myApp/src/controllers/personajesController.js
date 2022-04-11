@@ -1,6 +1,5 @@
 const db = require("../database/models");
 const { Op } = require("sequelize");
-const res = require("express/lib/response");
 
 const personajesController = {
   list: (req, res) => {
@@ -14,31 +13,36 @@ const personajesController = {
             status: 200,
             url: "http://localhost:3000/characters",
           },
-          data: personaje,
+          data: personajes,
         });
       })
       .catch((error) => console.log(error));
   },
   detail: (req, res) => {
-    db.Personajes.findByPk({
-      include: [{ association: "peliculas", atributtes: ["id", "nombre"] }],
+    db.Personajes.findByPk(req.params.id, {
+      include: [{ association: "peliculas" }],
     })
       .then((personaje) => {
         return res.status(200).json({
           data: personaje,
           status: 200,
-          url: "http://localhost:3000/characters/:id",
+          url: "http://localhost:3000/characters/detail/:id",
         });
       })
       .catch((error) => console.log(error));
   },
   search: (req, res) => {
+    let { nombre, edad, peso } = req.query;
+    console.log(nombre, edad);
     db.Personajes.findAll({
       include: ["peliculas"],
+      atributtes: ["nombre", "edad", "peso"],
       where: {
-        nombre: { [Op.like]: "%" + req.query + "%" },
-        edad: { [Op.like]: "%" + req.query + "%" },
-        peliculas: { [Op.like]: "%" + req.query + "%" },
+        [Op.or]: [
+          { nombre: { [Op.like]: `%${nombre}%` } },
+          { edad: { [Op.like]: `%${edad}%` } },
+          { peso: { [Op.like]: `%${peso}%` } },
+        ],
       },
     })
       .then((personajes) => {
@@ -49,10 +53,10 @@ const personajesController = {
             url: "http://localhost:3000/characters/search?",
           },
           data: personajes,
-          pelicula: personajes.peliculas,
+          peliculas: personajes.peliculas,
         });
       })
-      .catch((error) => console.log(error));
+      .catch((e) => console.log(e));
   },
   create: (req, res) => {
     db.Personajes.create({
@@ -80,7 +84,6 @@ const personajesController = {
         edad: req.body.edad,
         peso: req.body.peso,
         historia: req.body.historia,
-        peliculas_id: req.body.peliculas_id,
       },
       {
         where: {
@@ -98,7 +101,7 @@ const personajesController = {
       .catch((error) => console.log(error));
   },
   delete: (req, res) => {
-    db.Personajes.delete({
+    db.Personajes.destroy({
       where: { id: req.params.id },
     })
       .then((personaje) => {

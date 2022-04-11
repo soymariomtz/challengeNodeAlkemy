@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   };
   let config = {
-    timestamps: true,
+    timestamps: false,
     // createdAt: "created_at",
     // updatedAt: "updated_at",
     // deletedAt: "deleted_at",
@@ -38,8 +38,8 @@ module.exports = (sequelize, DataTypes) => {
   Peliculas.associate = function (models) {
     Peliculas.belongsToMany(models.Personajes, {
       as: "personajes",
-      through: "PeliculasPersonajes",
-      foreignKey: "pelicula_id",
+      through: "peliculas_personajes",
+      foreignKey: "peliculas_id",
       otherKey: "personaje_id",
       timestamps: false,
     });

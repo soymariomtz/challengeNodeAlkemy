@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     // },
   };
   let config = {
-    timestamps: true,
+    timestamps: false,
     // createdAt: "created_at",
     // updatedAt: "updated_at",
     // deletedAt: "deleted_at",
