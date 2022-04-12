@@ -23,16 +23,9 @@ module.exports = (sequelize, DataTypes) => {
     historia: {
       type: DataTypes.TEXT(),
     },
-    // peliculas_id: {
-    //   type: DataTypes.INTEGER(11),
-    //   allowNull: false,
-    // },
   };
   let config = {
     timestamps: false,
-    // createdAt: "created_at",
-    // updatedAt: "updated_at",
-    // deletedAt: "deleted_at",
   };
 
   const Personajes = sequelize.define(alias, cols, config);

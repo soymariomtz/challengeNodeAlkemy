@@ -15,16 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     imagen: {
       type: DataTypes.STRING(255),
     },
-    // pelicula_id: {
-    //   type: DataTypes.BIGINT(11),
-    //   allowNull: false,
-    // },
   };
   let config = {
     timestamps: false,
-    // createdAt: "created_at",
-    // updatedAt: "updated_at",
-    // deletedAt: "deleted_at",
   };
 
   const Generos = sequelize.define(alias, cols, config);

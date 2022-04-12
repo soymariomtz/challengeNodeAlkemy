@@ -33,7 +33,6 @@ const personajesController = {
   },
   search: (req, res) => {
     let { nombre, edad, peso } = req.query;
-    console.log(nombre, edad);
     db.Personajes.findAll({
       include: ["peliculas"],
       atributtes: ["nombre", "edad", "peso"],
@@ -50,7 +49,7 @@ const personajesController = {
           meta: {
             total: personajes.length,
             status: 200,
-            url: "http://localhost:3000/characters/search?",
+            url: "http://localhost:3000/characters/search",
           },
           data: personajes,
           peliculas: personajes.peliculas,
