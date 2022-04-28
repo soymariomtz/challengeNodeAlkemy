@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       as: "personajes",
       through: "peliculas_personajes",
       foreignKey: "peliculas_id",
-      otherKey: "personaje_id",
+      otherKey: "personajes_id",
       timestamps: false,
     });
     Peliculas.belongsTo(models.Generos, {

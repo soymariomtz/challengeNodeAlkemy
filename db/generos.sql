@@ -1,3 +1,5 @@
+use disney_db
+
 insert into generos
 values (1, 'Comedia', 'https://i.ytimg.com/vi/hvlOk1jzAms/maxresdefault.jpg'),
 (2, 'Drama', 'https://i.ytimg.com/vi/hvlOk1jzAms/maxresdefault.jpg'),

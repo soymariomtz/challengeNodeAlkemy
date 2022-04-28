@@ -1,3 +1,7 @@
+use disney_db
+
+set @@global.sql_mode= '';
+
 insert into peliculas
 values (1,'https://static.wikia.nocookie.net/doblaje/images/5/50/MiPobreAngelito.jpg/revision/latest?cb=20150517192150&path-prefix=es','Mi Pobre Angelito','1990-11-10',2,1),
 (2,'https://static.wikia.nocookie.net/disney/images/4/47/Bambi_Walt_Disney.jpg/revision/latest?cb=20210808191619&path-prefix=es','Bambi','1942-12-09',5,2),

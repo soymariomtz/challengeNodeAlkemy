@@ -1,3 +1,5 @@
+use disney_db;
+
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,

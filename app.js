@@ -7,6 +7,7 @@ var logger = require("morgan");
 //Require Routes
 const personajesRouter = require("./src/routes/personajesRouter");
 const usuariosRouter = require("./src/routes/usuariosRouter");
+const peliculasRouter = require("./src/routes/peliculasRouter");
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //Routes
 app.use("/characters", personajesRouter);
 app.use("/auth", usuariosRouter);
+app.use("/movies", peliculasRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

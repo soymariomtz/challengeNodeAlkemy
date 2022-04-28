@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   let config = {
     timestamps: false,
+    tableName: "generos",
   };
 
   const Generos = sequelize.define(alias, cols, config);

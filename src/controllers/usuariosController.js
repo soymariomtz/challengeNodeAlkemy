@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const db = require("../database/models");
 const jwt = require("jsonwebtoken");
+const welcomeMail = require("../email/send");
 
 const usuariosController = {
   register: (req, res) => {
@@ -22,11 +23,12 @@ const usuariosController = {
           password: createPassword,
         })
           .then((usuario) => {
-            return res.status(200).json({
+            res.status(200).json({
               status: 200,
               data: usuario,
               url: "http://localhost:3000/auth/register",
             });
+            welcomeMail(usuario.email);
           })
 
           .catch((error) => {

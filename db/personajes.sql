@@ -1,3 +1,5 @@
+use disney_db
+
 insert into personajes (id, imagen, nombre, edad,peso)
 values (1,'https://upload.wikimedia.org/wikipedia/commons/a/a2/Macaulay_Culkin_1991_B.jpg','Macaulay Culkin',41,30),
 (2,'https://static.wikia.nocookie.net/disney/images/2/2d/Bambi.png/revision/latest/top-crop/width/360/height/450?cb=20131108172027&path-prefix=es','Bambi',6,15),
