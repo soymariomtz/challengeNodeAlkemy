@@ -10,5 +10,7 @@ module.exports = {
   },
   mail: {
     api: process.env.SENDGRID_API_KEY,
+    from: process.env.MAIL_FROM,
+    template: process.env.TEMPLATE_ID,
   },
 };

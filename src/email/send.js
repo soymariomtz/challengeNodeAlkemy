@@ -7,8 +7,8 @@ sgMail.setApiKey(mailer.mail.api);
 welcomeMail = (mailTo) => {
   const msg = {
     to: mailTo,
-    from: "mariomtz091@gmail.com",
-    templateId: "d-b4edd4458724486fa51aab8ba6c05c1d",
+    from: mailer.mail.from,
+    templateId: mailer.mail.template,
   };
 
   (async () => {
