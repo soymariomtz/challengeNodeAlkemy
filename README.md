@@ -2,7 +2,7 @@
 
 ---
 
-Esta API fue desarrollada para explorar el mundo de Disney. Te permitirá conocer, crear y modificar personajes y las películas en las que intervienen.
+Esta API fue desarrollada para explorar el mundo de Disney. Te permitirá conocer, crear, modificar personajes y películas en las que intervienen.
 
 ### Construido con:
 
@@ -21,7 +21,10 @@ Para obtener una copia local en funcionamiento, siga estos sencillos pasos.
 
 - MySql
   - Siga estos [pasos de la instalación](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/).
-  - Cree ana base de datos para la apliacación.
+  - Cree una base de datos para la aplicación.
+  ```sh
+  - Ejecutando el archivo disney_db.sql en la carpeta raiz o desde la carpeta db ejecutar los script individualmente.
+  ```
 - Send Grid
   - Cree una cuenta [desde aquí](https://sendgrid.com/)
   - [Configura la autenticación](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication#setting-up-domain-authentication)
