@@ -23,7 +23,8 @@ Para obtener una copia local en funcionamiento, siga estos sencillos pasos.
   - Siga estos [pasos de la instalación](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/).
   - Cree una base de datos para la aplicación.
   ```sh
-  - Ejecutando el archivo disney_db.sql en la carpeta raiz o desde la carpeta db ejecutar los script individualmente.
+  - Ejecutando el archivo disney_db.sql ubicado en la carpeta raiz
+  o desde la carpeta db ejecutar los script individualmente.
   ```
 - Send Grid
   - Cree una cuenta [desde aquí](https://sendgrid.com/)
